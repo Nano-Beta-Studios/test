@@ -1,12 +1,15 @@
 <html>
 <head>
   <script>
-    var queryString = window.location.hash.slice(1);
-    var params = new URLSearchParams(queryString);
-    var accessToken = params.get("access_token");
+    function getToken() {
+      var queryString = window.location.hash.slice(1);
+      var params = new URLSearchParams(queryString);
+      var accessToken = params.get("access_token");
+      document.getElementById("token").innerHTML = accessToken;
+    }
   </script>
 </head>
-<body>
-<p>{accessToken}</p>
+<body onLoad="getToken()">
+<h1><span id="token"></span></h1>
 </body>
 </html>

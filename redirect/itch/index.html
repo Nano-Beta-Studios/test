@@ -1,0 +1,12 @@
+<html>
+<head>
+  <script>
+    var queryString = window.location.hash.slice(1);
+    var params = new URLSearchParams(queryString);
+    var accessToken = params.get("access_token");
+  </script>
+</head>
+<body>
+<p>{accessToken}</p>
+</body>
+</html>
